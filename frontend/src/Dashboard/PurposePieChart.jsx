@@ -15,18 +15,18 @@ const PurposePieChart = () => {
 
     function fetchData() {
       // Fetch the data from your Django API
-      fetch('http://127.0.0.1:8000/purpose-data/')
+      fetch("https://django-render-vms.onrender.com/purpose-data/")
         .then((response) => response.json())
         .then((data) => {
           // Format the data for the pie chart
           const purposeChartData = data.purposes.map((purpose) => [
             purpose.purpose,
-            purpose.count
+            purpose.count,
           ]);
           setPurposeData(purposeChartData);
         })
         .catch((error) => {
-          console.error('Error fetching purpose data:', error);
+          console.error("Error fetching purpose data:", error);
         });
     }
   }, []);

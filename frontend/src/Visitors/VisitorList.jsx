@@ -166,13 +166,13 @@ const VisitorsList = ({ isAuthenticated }) => {
                     <td>{visitor.Red_flag ? "Yes" : "No"}</td>
                     <td>
                       <Button
-                        className="mr-2"
+                        className="mr-2 bg-blue-600"
                         onClick={(event) => handleUpdate(event, visitor)}
                       >
                         <FaEdit />
                       </Button>
                       <Button
-                        className="mr-2"
+                        className="mr-2 bg-red-600"
                         variant="danger"
                         onClick={(event) => handleDelete(event, visitor.id)}
                       >

@@ -12,18 +12,18 @@ const PieChartType = () => {
 
     function fetchData() {
       // Fetch the data from your Django API
-      fetch('http://127.0.0.1:8000/visit-type-data/')
+      fetch("https://django-render-vms.onrender.com/visit-type-data/")
         .then((response) => response.json())
         .then((data) => {
           // Format the data for the pie chart
           const visitTypeChartData = data.visit_types.map((visitType) => [
             visitType.visit_type,
-            visitType.count
+            visitType.count,
           ]);
           setVisitTypeData(visitTypeChartData);
         })
         .catch((error) => {
-          console.error('Error fetching visit type data:', error);
+          console.error("Error fetching visit type data:", error);
         });
     }
   }, []);
