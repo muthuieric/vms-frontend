@@ -26,9 +26,16 @@ const UpdateEmployeeModal = (props) => {
 
   return (
     <div className="container">
-      <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Update Employee Information</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Update Employee Information
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Row>
@@ -36,32 +43,66 @@ const UpdateEmployeeModal = (props) => {
               <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="Name">
                   <Form.Label>Name</Form.Label>
-                  <Form.Control type="text" name="Name" required defaultValue={props.employee.Name} placeholder="" />
+                  <Form.Control
+                    type="text"
+                    name="Name"
+                    required
+                    defaultValue={props.employee.Name}
+                    placeholder=""
+                  />
                 </Form.Group>
 
                 <Form.Group controlId="Job_title">
                   <Form.Label>Job Title</Form.Label>
-                  <Form.Control type="text" name="Job_title" required defaultValue={props.employee.Job_title} placeholder="" />
+                  <Form.Control
+                    type="text"
+                    name="Job_title"
+                    required
+                    defaultValue={props.employee.Job_title}
+                    placeholder=""
+                  />
                 </Form.Group>
 
                 <Form.Group controlId="Id_number">
                   <Form.Label>ID Number</Form.Label>
-                  <Form.Control type="text" name="Id_number" required defaultValue={props.employee.Id_number} placeholder="" />
+                  <Form.Control
+                    type="text"
+                    name="Id_number"
+                    required
+                    defaultValue={props.employee.Id_number}
+                    placeholder=""
+                  />
                 </Form.Group>
 
                 <Form.Group controlId="Phone">
                   <Form.Label>Phone</Form.Label>
-                  <Form.Control type="text" name="Phone" required defaultValue={props.employee.Phone} placeholder="" />
+                  <Form.Control
+                    type="text"
+                    name="Phone"
+                    required
+                    defaultValue={props.employee.Phone}
+                    placeholder=""
+                  />
                 </Form.Group>
 
                 <Form.Group controlId="Email">
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="text" name="Email" required defaultValue={props.employee.Email} placeholder="" />
+                  <Form.Control
+                    type="text"
+                    name="Email"
+                    required
+                    defaultValue={props.employee.Email}
+                    placeholder=""
+                  />
                 </Form.Group>
 
                 <Form.Group>
                   <p></p>
-                  <Button variant="primary" type="submit">
+                  <Button
+                    variant="primary"
+                    className="bg-blue-600"
+                    type="submit"
+                  >
                     Submit
                   </Button>
                 </Form.Group>
@@ -70,7 +111,11 @@ const UpdateEmployeeModal = (props) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={props.onHide}>
+          <Button
+            variant="danger"
+            className="bg-red-600"
+            onClick={props.onHide}
+          >
             Close
           </Button>
         </Modal.Footer>

@@ -105,13 +105,16 @@ const VisitorsList = ({ isAuthenticated }) => {
           </h2>
           <ButtonToolbar className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
             <Button
-              className="md:inline-block "
+              className="md:inline-block bg-blue-600"
               variant="primary"
               onClick={handleAdd}
             >
               Add Visitor
             </Button>
-            <Button className="md:inline-block " onClick={handlePrint}>
+            <Button
+              className="md:inline-block bg-blue-600"
+              onClick={handlePrint}
+            >
               Print
             </Button>
             <AddVisitorModal

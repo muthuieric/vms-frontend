@@ -87,7 +87,11 @@ const AddEmployeeModal = (props) => {
                 </Form.Group>
                 <Form.Group>
                   <p></p>
-                  <Button variant="primary" type="submit">
+                  <Button
+                    variant="primary"
+                    className="bg-blue-600"
+                    type="submit"
+                  >
                     Submit
                   </Button>
                 </Form.Group>
@@ -96,7 +100,7 @@ const AddEmployeeModal = (props) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={props.onHide}>
+          <Button variant="danger" className="bg-red-600" onClick={props.onHide}>
             Close
           </Button>
         </Modal.Footer>
