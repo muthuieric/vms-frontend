@@ -97,7 +97,7 @@ const UpdateVisitorModal = (props) => {
                   <p></p>
                   <Button
                     variant="primary"
-                    className="bg-blue-600"
+                    className="bg-blue-600  mt-6"
                     type="submit"
                   >
                     Submit

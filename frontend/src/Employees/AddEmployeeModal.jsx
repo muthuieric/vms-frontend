@@ -26,17 +26,17 @@ const AddEmployeeModal = (props) => {
   return (
     <div className="container">
       <Modal
-        {...props}
+        {...props }
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title id="contained-modal-title-vcenter" >
             Fill In Employee Information
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body >
           <Row>
             <Col sm={6}>
               <Form onSubmit={handleSubmit}>
@@ -89,7 +89,7 @@ const AddEmployeeModal = (props) => {
                   <p></p>
                   <Button
                     variant="primary"
-                    className="bg-blue-600"
+                    className="bg-blue-600 mt-6"
                     type="submit"
                   >
                     Submit
