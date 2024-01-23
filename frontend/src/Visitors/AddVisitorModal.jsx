@@ -31,7 +31,7 @@ const AddVisitorModal = (props) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="text-black">
           <Modal.Title id="contained-modal-title-vcenter">
             Fill In Visitor Information
           </Modal.Title>
