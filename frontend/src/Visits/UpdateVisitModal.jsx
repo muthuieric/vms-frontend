@@ -1,25 +1,24 @@
 import React from "react";
 import { Modal, Col, Row, Form, Button } from "react-bootstrap";
-import { updateVisit } from "../services/VisitsService";
+import { updateVisitor } from "../services/VisitorsService";
 
-const UpdateVisitModal = (props) => {
+const UpdateVisitorModal = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateVisit(props.visit.id, {
-      visitor: e.target.name.value,
-      host: e.target.host.value,
-      visit_type: e.target.visit_type.value,
-      purpose: e.target.purpose.value,
-      checkin: e.target.checkin.value,
-      checkout: e.target.checkout.value,
+    updateVisitor(props.visitor.id, {
+      Name: e.target.Name.value,
+      Id_number: e.target.Id_number.value,
+      Phone: e.target.Phone.value,
+      Email: e.target.Email.value,
+      Red_flag: e.target.Red_flag.checked, // Include Red_flag field
     }).then(
       (result) => {
         alert(result);
         props.setUpdated(true);
       },
       (error) => {
-        console.error("Failed to Update Visit:", error);
-        alert("Failed to Update Visit");
+        console.error("Failed to Update Visitor:", error);
+        alert("Failed to Update Visitor");
       }
     );
   };
@@ -34,86 +33,69 @@ const UpdateVisitModal = (props) => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Update Visit Information
+            Update Visitor Information
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Row>
             <Col sm={6}>
               <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="name">
-                  <Form.Label>Visitor's Name</Form.Label>
+                <Form.Group controlId="Name">
+                  <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
-                    name="name"
+                    name="Name"
                     required
-                    defaultValue={props.visit.visitor}
+                    defaultValue={props.visitor.Name}
                     placeholder=""
-                    readOnly
                   />
                 </Form.Group>
-                <Form.Group controlId="host">
-                  <Form.Label>Host</Form.Label>
+
+                <Form.Group controlId="Id_number">
+                  <Form.Label>ID Number</Form.Label>
                   <Form.Control
                     type="text"
-                    name="host"
+                    name="Id_number"
                     required
-                    defaultValue={props.visit.host}
+                    defaultValue={props.visitor.Id_number}
                     placeholder=""
-                    readOnly
                   />
                 </Form.Group>
-                <Form.Group controlId="visit_type">
-                  <Form.Label>Visit Type</Form.Label>
-                  <Form.Control
-                    as="select"
-                    name="visit_type"
-                    required
-                    defaultValue={props.visit.visit_type}
-                  >
-                    <option value="Contractor">Contractor</option>
-                    <option value="Delivery">Delivery</option>
-                    <option value="Visitor">Visitor</option>
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group controlId="purpose">
-                  <Form.Label>Purpose</Form.Label>
-                  <Form.Control
-                    as="select"
-                    name="purpose"
-                    required
-                    defaultValue={props.visit.purpose}
-                  >
-                    <option value="Personal">Personal</option>
-                    <option value="Official">Official</option>
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group controlId="checkin">
-                  <Form.Label>Checkin</Form.Label>
+
+                <Form.Group controlId="Phone">
+                  <Form.Label>Phone</Form.Label>
                   <Form.Control
                     type="text"
-                    name="checkin"
+                    name="Phone"
                     required
-                    defaultValue={props.visit.checkin}
+                    defaultValue={props.visitor.Phone}
                     placeholder=""
-                    readOnly
                   />
                 </Form.Group>
-                <Form.Group controlId="checkout">
-                  <Form.Label>Checkout</Form.Label>
+
+                <Form.Group controlId="Email">
+                  <Form.Label>Email</Form.Label>
                   <Form.Control
-                    type="datetime-local"
-                    name="checkout"
-                    defaultValue={props.visit.checkout}
+                    type="text"
+                    name="Email"
+                    required
+                    defaultValue={props.visitor.Email}
+                    placeholder=""
                   />
                 </Form.Group>
+
+                <Form.Group controlId="Red_flag">
+                  <Form.Check
+                    type="checkbox"
+                    label="Red Flag"
+                    name="Red_flag"
+                    defaultChecked={props.visitor.Red_flag}
+                  />
+                </Form.Group>
+
                 <Form.Group>
                   <p></p>
-                  <Button
-                    variant="primary"
-                    className="bg-blue-600  mt-6"
-                    type="submit"
-                  >
+                  <Button variant="primary" type="submit">
                     Submit
                   </Button>
                 </Form.Group>
@@ -122,11 +104,7 @@ const UpdateVisitModal = (props) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant="danger"
-            className="bg-red-600"
-            onClick={props.onHide}
-          >
+          <Button variant="danger" onClick={props.onHide}>
             Close
           </Button>
         </Modal.Footer>
@@ -135,4 +113,4 @@ const UpdateVisitModal = (props) => {
   );
 };
 
-export default UpdateVisitModal;
+export default UpdateVisitorModal;

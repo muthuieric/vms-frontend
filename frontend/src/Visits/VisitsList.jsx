@@ -10,9 +10,10 @@ import {
 } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import { RxExit } from "react-icons/rx";
 import AddVisitModal from "./AddVisitModal";
 import UpdateVisitModal from "./UpdateVisitModal";
-import { getVisits, deleteVisit } from "../services/VisitsService";
+import { getVisits, deleteVisit, updateVisit } from "../services/VisitsService";
 import Pagination from "../Pagination";
 
 const VisitsList = ({ isAuthenticated }) => {
@@ -85,6 +86,21 @@ const VisitsList = ({ isAuthenticated }) => {
     }
   };
 
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    updateVisit(id, {
+      checkout: new Date().toISOString(),
+    }).then(
+      (result) => {
+        alert(result);
+        setIsUpdated(true);
+      },
+      (error) => {
+        console.error("Failed to Update Visit:", error);
+        alert("Failed to Update Visit");
+      }
+    );
+  };
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
   };
@@ -124,16 +140,13 @@ const VisitsList = ({ isAuthenticated }) => {
           </h2>
           <ButtonToolbar className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
             <Button
-              className="md:inline-block bg-blue-600"
+              className="md:inline-block "
               variant="primary"
               onClick={handleAdd}
             >
               Add Visit
             </Button>
-            <Button
-              className="md:inline-block bg-blue-600 "
-              onClick={handlePrint}
-            >
+            <Button className="md:inline-block " onClick={handlePrint}>
               Print
             </Button>
             <AddVisitModal
@@ -208,6 +221,12 @@ const VisitsList = ({ isAuthenticated }) => {
                       >
                         <RiDeleteBin5Line />
                       </Button>
+                      <Button
+                        className="mr-2 bg-black"
+                        onClick={(event) => handleClick(event, visit.id)}
+                      >
+                        <RxExit />
+                      </Button>
                       <UpdateVisitModal
                         show={editModalShow}
                         visit={editVisit}
@@ -233,4 +252,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(VisitsList);
-
