@@ -17,7 +17,8 @@ import Dashboard from "./Dashboard/Dashboard";
 import VisitorsList from "./Visitors/VisitorList";
 import VisitsList from "./Visits/VisitsList";
 import EmployeesList from "./Employees/EmployeeList";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 const App = () => {
   return (
