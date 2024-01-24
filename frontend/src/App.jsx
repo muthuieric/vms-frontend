@@ -23,20 +23,20 @@ const App = () => {
       <Router>
         <Layout>
           <Routes>
-            <Route path="login/" Component={Login}></Route>
-            <Route path="signup/" Component={Signup}></Route>
-            <Route path="change/password/" Component={ChangePassword}></Route>
-            <Route path="reset/password/" Component={ResetPassword}></Route>
+            <Route index element={<Home />} />
+            <Route path="login/" element={Login}></Route>
+            <Route path="signup/" element={Signup}></Route>
+            <Route path="change/password/" element={ChangePassword}></Route>
+            <Route path="reset/password/" element={ResetPassword}></Route>
             <Route
               path="dj-rest-auth/registration/account-confirm-email/:key/"
-              Component={EmailVerification}
+              element={EmailVerification}
             ></Route>
             <Route
               path="reset/password/confirm/:uid/:token"
-              Component={ResetPasswordConfirm}
+              element={ResetPasswordConfirm}
             ></Route>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/visitors" element={<VisitorsList />} />
             <Route path="/visits" element={<VisitsList />} />
             <Route path="/employees" element={<EmployeesList />} />
