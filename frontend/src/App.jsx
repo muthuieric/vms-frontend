@@ -1,6 +1,7 @@
+// App.jsx
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import ChangePassword from "./Pages/ChangePassword";
 import EmailVerification from "./Pages/EmailVerification";
 import Home from "./Pages/Home";
@@ -16,6 +17,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import VisitorsList from "./Visitors/VisitorList";
 import VisitsList from "./Visits/VisitsList";
 import EmployeesList from "./Employees/EmployeeList";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const App = () => {
   return (
@@ -23,18 +25,19 @@ const App = () => {
       <Router>
         <Layout>
           <Routes>
-            <Route path="login/" element={Login}></Route>
-            <Route path="signup/" element={Signup}></Route>
-            <Route path="change/password/" element={ChangePassword}></Route>
-            <Route path="reset/password/" element={ResetPassword}></Route>
+            <Route path="login/" element={<Login />} />
+            <Route path="signup/" element={<Signup />} />
+            <Route path="change/password/" element={<ChangePassword />} />
+            <Route path="reset/password/" element={<ResetPassword />} />
             <Route
               path="dj-rest-auth/registration/account-confirm-email/:key/"
-              element={EmailVerification}
-            ></Route>
+              element={<EmailVerification />}
+            />
             <Route
               path="reset/password/confirm/:uid/:token"
-              element={ResetPasswordConfirm}
-            ></Route>
+              element={<ResetPasswordConfirm />}
+            />
+            <Route index element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/visitors" element={<VisitorsList />} />
             <Route path="/visits" element={<VisitsList />} />
