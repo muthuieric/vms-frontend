@@ -30,8 +30,6 @@ const Navbar = ({ logout, isAuthenticated, user, getUser }) => {
             <ul className="flex flex-col items-center  lg:flex-row absolute lg:relative right-0 bg-primary top-10 lg:top-0 w-full z-40">
               {isAuthenticated ? (
                 <>
-                  {user?.role === "admin" && (
-                    <>
                       <li className="mb-2">
                         <Link
                           className="text-white no-underline  block md:inline-block md:mr-4 text-lg font-medium bold hover:underline "
@@ -52,8 +50,6 @@ const Navbar = ({ logout, isAuthenticated, user, getUser }) => {
                           Employees
                         </Link>
                       </li>
-                    </>
-                  )}
                   <li className="mb-2">
                     <Link
                       className="text-white block  no-underline  md:inline-block md:mr-4 text-lg font-medium bold hover:underline"

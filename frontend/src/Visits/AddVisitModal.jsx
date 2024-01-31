@@ -137,11 +137,7 @@ const AddVisitModal = (props) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant="danger"
-            className="bg-red-600"
-            onClick={props.onHide}
-          >
+          <Button variant="danger" className="bg-red-600" onClick={props.onHide}>
             Close
           </Button>
         </Modal.Footer>

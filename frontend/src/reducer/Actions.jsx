@@ -167,28 +167,29 @@ export const logout = () => async dispatch => {
     }
 }
 
-export const signup = ( email, first_name, last_name, password1, password2 ) => async dispatch => {
+export const signup =
+  (email, first_name, password1, password2) => async (dispatch) => {
     const config = {
-        headers: {
-            "Content-Type": "application/json"
-        }
+      headers: {
+        "Content-Type": "application/json",
+      },
     };
-    const body = JSON.stringify({ email, first_name, last_name, password1, password2 });
+    const body = JSON.stringify({ email, first_name, password1, password2 });
     try {
-        await axios.post(
-          "https://django-render-vms.onrender.com/dj-rest-auth/registration/",
-          body,
-          config
-        );
-        dispatch ({
-            type: TYPE.SIGNUP_SUCCESS
-        });
+      await axios.post(
+        "https://django-render-vms.onrender.com/dj-rest-auth/registration/",
+        body,
+        config
+      );
+      dispatch({
+        type: TYPE.SIGNUP_SUCCESS,
+      });
     } catch (err) {
-        dispatch ({
-            type: TYPE.SIGNUP_FAIL
-        });
-    };
-};
+      dispatch({
+        type: TYPE.SIGNUP_FAIL,
+      });
+    }
+  };
 
 export const emailVerification = ( key ) => async dispatch => {
     const config = {
