@@ -26,7 +26,7 @@ const Login = ({ login, isAuthenticated }) => {
 //     window.location.replace(
 //       `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${callBackURI}&prompt=consent&response_type=code&client_id=${clientID}&scope=openid%20email%20profile&access_type=offline`
 //     );
-//   };
+//   }
 
   if (isAuthenticated) {
     return <Navigate to={"../visits/"}></Navigate>;
