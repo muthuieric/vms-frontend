@@ -15,7 +15,7 @@ const PurposePieChart = () => {
 
     function fetchData() {
       // Fetch the data from your Django API
-      fetch("https://django-render-vms.onrender.com/purpose-data/")
+      fetch("http://127.0.0.1:8000/purpose-data/")
         .then((response) => response.json())
         .then((data) => {
           // Format the data for the pie chart

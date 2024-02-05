@@ -39,7 +39,7 @@ const HostVisitorChart = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://django-render-vms.onrender.com/host-visitor-data/"
+          "http://127.0.0.1:8000/host-visitor-data/"
         );
         setHostVisitorData(response.data.host_visitor_data);
       } catch (error) {

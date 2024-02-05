@@ -14,7 +14,6 @@ import { Provider } from "react-redux";
 import Store from "./Store";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dashboard from "./Dashboard/Dashboard";
-import VisitorsList from "./Visitors/VisitorList";
 import VisitsList from "./Visits/VisitsList";
 import EmployeesList from "./Employees/EmployeeList";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -40,7 +39,6 @@ const App = () => {
             />
             <Route index element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/visitors" element={<VisitorsList />} />
             <Route path="/visits" element={<VisitsList />} />
             <Route path="/employees" element={<EmployeesList />} />
           </Routes>

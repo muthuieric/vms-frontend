@@ -17,7 +17,7 @@ export const login = ( email, password ) => async dispatch => {
     const body = JSON.stringify({ email, password })
     try {
         const res = await axios.post(
-          "https://django-render-vms.onrender.com/dj-rest-auth/login/",
+          "http://127.0.0.1:8000/dj-rest-auth/login/",
           body,
           config
         );
@@ -42,7 +42,7 @@ export const verify = () => async dispatch => {
         const body = JSON.stringify({ "token": localStorage.getItem('access') });
         try {
             await axios.post(
-              "https://django-render-vms.onrender.com/dj-rest-auth/token/verify/",
+              "http://127.0.0.1:8000/dj-rest-auth/token/verify/",
               body,
               config
             );
@@ -72,7 +72,7 @@ export const getUser = () => async dispatch => {
         };
         try {
             const res = await axios.get(
-              "https://django-render-vms.onrender.com/dj-rest-auth/user/",
+              "http://127.0.0.1:8000/dj-rest-auth/user/",
               config
             );
             dispatch ({
@@ -100,7 +100,7 @@ export const refresh = () => async dispatch => {
         };
         try {
             const res = await axios.post(
-              "https://django-render-vms.onrender.com/dj-rest-auth/token/refresh/",
+              "http://127.0.0.1:8000/dj-rest-auth/token/refresh/",
               config
             );
             console.log(res.data);
@@ -132,7 +132,7 @@ export const changePassword = ( new_password1, new_password2, old_password ) => 
     const body = JSON.stringify({ new_password1, new_password2, old_password });
     try {
         await axios.post(
-          "https://django-render-vms.onrender.com/dj-rest-auth/password/change/",
+          "http://127.0.0.1:8000/dj-rest-auth/password/change/",
           body,
           config
         );
@@ -154,7 +154,7 @@ export const logout = () => async dispatch => {
     };
     try {
         await axios.post(
-          "https://django-render-vms.onrender.com/dj-rest-auth/logout/",
+          "http://127.0.0.1:8000/dj-rest-auth/logout/",
           config
         );
         dispatch ({
@@ -177,7 +177,7 @@ export const signup =
     const body = JSON.stringify({ email, first_name, password1, password2 });
     try {
       await axios.post(
-        "https://django-render-vms.onrender.com/dj-rest-auth/registration/",
+        "http://127.0.0.1:8000/dj-rest-auth/registration/",
         body,
         config
       );
@@ -200,7 +200,7 @@ export const emailVerification = ( key ) => async dispatch => {
     const body = JSON.stringify({ key });
     try {
         await axios.post(
-          "https://django-render-vms.onrender.com/dj-rest-auth/registration/verify-email/",
+          "http://127.0.0.1:8000/dj-rest-auth/registration/verify-email/",
           body,
           config
         );
@@ -223,7 +223,7 @@ export const resetPassword = ( email ) => async dispatch => {
     const body = JSON.stringify({ email });
     try {
         await axios.post(
-          "https://django-render-vms.onrender.com/dj-rest-auth/password/reset/",
+          "http://127.0.0.1:8000/dj-rest-auth/password/reset/",
           body,
           config
         );
@@ -246,7 +246,7 @@ export const resetPasswordConfirm = ( uid, token, new_password1, new_password2 )
     const body = JSON.stringify({ uid, token, new_password1, new_password2 });
     try {
         await axios.post(
-          "https://django-render-vms.onrender.com/dj-rest-auth/password/reset/confirm/",
+          "http://127.0.0.1:8000/dj-rest-auth/password/reset/confirm/",
           body,
           config
         );
@@ -270,7 +270,7 @@ export const googleLogin = ( code ) => async dispatch => {
         const body = JSON.stringify({ code })
         try {
             const res = await axios.post(
-              "https://django-render-vms.onrender.com/dj-rest-auth/google/",
+              "http://127.0.0.1:8000/dj-rest-auth/google/",
               body,
               config
             );

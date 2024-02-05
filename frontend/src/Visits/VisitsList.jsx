@@ -186,6 +186,8 @@ const VisitsList = ({ isAuthenticated }) => {
               <tr>
                 <th>ID</th>
                 <th>Visitor Name</th>
+                <th>Id</th>
+                <th>Phone</th>
                 <th>Host Name</th>
                 <th>Visit Type</th>
                 <th>Purpose</th>
@@ -201,6 +203,8 @@ const VisitsList = ({ isAuthenticated }) => {
                   <tr key={visit.id}>
                     <td>{visit.id}</td>
                     <td>{visit.visitor}</td>
+                    <td>{visit.id_number}</td>
+                    <td>{visit.phone}</td>
                     <td>{visit.host}</td>
                     <td>{visit.visit_type}</td>
                     <td>{visit.purpose}</td>

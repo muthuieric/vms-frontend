@@ -53,16 +53,6 @@ const Navbar = ({ logout, isAuthenticated, user, getUser }) => {
                   <li className="mb-2">
                     <Link
                       className="text-white block  no-underline  md:inline-block md:mr-4 text-lg font-medium bold hover:underline"
-                      to="/visitors/"
-                      activeClassName="font-bold"
-                      onClick={toggleNavbar}
-                    >
-                      Visitors
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link
-                      className="text-white block  no-underline  md:inline-block md:mr-4 text-lg font-medium bold hover:underline"
                       to="/visits/"
                       activeClassName="font-bold"
                       onClick={toggleNavbar}
