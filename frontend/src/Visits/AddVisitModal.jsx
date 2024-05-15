@@ -3,7 +3,9 @@ import { Modal, Col, Row, Form, Button } from "react-bootstrap";
 import Select from "react-select";
 import { addVisit } from "../services/VisitsService";
 // import { getVisitors } from "../services/VisitorsService";
-import { getEmployees } from "../services/EmployeesService"; // Import the service function for fetching employees
+import { getEmployees } from "../services/EmployeesService"; 
+
+
 
 const AddVisitModal = (props) => {
   // const [visitorNames, setVisitorNames] = useState([]);

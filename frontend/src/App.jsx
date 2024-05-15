@@ -17,6 +17,8 @@ import Dashboard from "./Dashboard/Dashboard";
 import VisitsList from "./Visits/VisitsList";
 import EmployeesList from "./Employees/EmployeeList";
 import { BrowserRouter as Router } from "react-router-dom";
+import ConfirmationPage from "./Visits/VisitConfirmation";
+
 
 
 const App = () => {
@@ -40,6 +42,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/visits" element={<VisitsList />} />
+            <Route path="/confirmation" element={<ConfirmationPage />} />
             <Route path="/employees" element={<EmployeesList />} />
           </Routes>
         </Layout>
