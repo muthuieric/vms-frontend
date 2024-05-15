@@ -1,4 +1,4 @@
-# VMS - Visitor Management System
+# VMS
 
 VMS (Visitor Management System) is a web application designed to facilitate visitor registration and management for buildings. It allows visitors to be registered at the entrance, capturing their information along with their check-in and check-out times using timestamps. Additionally, it provides employee details and features a dashboard that tracks visitor and employee activity.
 
@@ -36,7 +36,7 @@ Before running the application, make sure you have the following installed:
 ## Installation
 Clone the repository to your local machine:
 
-1. git clone git@github.com:muthuieric/vms-frontend.git
+1. git clone `git@github.com:muthuieric/vms-frontend.git`
 2. Navigate to the project directory:`cd vms`
 3. Install the required dependencies:`npm install`
 4. Start the development server: `npm start`
@@ -54,13 +54,13 @@ This will generate optimized production-ready files in the build folder. Upload 
 Contributions to VMS are welcome. If you find any issues or have improvements to suggest, feel free to create a pull request or open an issue in the repository.
 
 ## Technologies Used
-React
-Tailwind
-Vite
-Django (for backend - see backend README for details)
-AWS
+- React
+- Tailwind
+- Vite
+- Django (for backend - see backend README for details)
+- AWS
 
 ## Author
-Author: Eric Muthui
+Author: `Eric Muthui`
 
 Thank you for exploring the VMS repository!
