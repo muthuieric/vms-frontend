@@ -9,7 +9,7 @@ const Dashboard = ({ isAuthenticated }) => {
   const [totalVisits, setTotalVisits] = useState(0);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/total-visits")
+    fetch("vms-database.cdq2uik26qke.us-east-1.rds.amazonaws.com/total-visits")
       .then((response) => response.json())
       .then((data) => {
         setTotalVisits(data.total_visits);

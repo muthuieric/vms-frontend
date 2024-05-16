@@ -12,7 +12,9 @@ const PieChartType = () => {
 
     function fetchData() {
       // Fetch the data from your Django API
-      fetch("http://127.0.0.1:8000/visit-type-data/")
+      fetch(
+        "vms-database.cdq2uik26qke.us-east-1.rds.amazonaws.com/visit-type-data/"
+      )
         .then((response) => response.json())
         .then((data) => {
           // Format the data for the pie chart
