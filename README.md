@@ -62,5 +62,3 @@ Contributions to VMS are welcome. If you find any issues or have improvements to
 
 ## Author
 Author: `Eric Muthui`
-
-Thank you for exploring the VMS repository!
